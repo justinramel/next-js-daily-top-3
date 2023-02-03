@@ -1,9 +1,10 @@
-import Image from "next/image";
 import styles from "./page.module.css";
 import { prisma } from "@/lib/prisma";
+import { NewTop3 } from "@/app/new-top-3";
+import { Todo } from "@/app/todo";
 
 async function getData() {
-  const top3 = await prisma.top3.findFirst({
+  return await prisma.top3.findFirst({
     where: {
       createdAt: {
         equals: new Date(),
@@ -17,8 +18,6 @@ async function getData() {
       },
     },
   });
-
-  return top3;
 }
 
 export default async function Home() {
@@ -27,13 +26,16 @@ export default async function Home() {
   return (
     <main className={styles.main}>
       <h1 className={styles.h1}>Top 3</h1>
-      <ol>
-        {top3?.todos.map((todo) => (
-          <li key={todo.id} className={styles.li}>
-            {todo.title}
-          </li>
-        ))}
-      </ol>
+
+      {top3?.todos?.length ? (
+        <ol>
+          {top3?.todos.map((todo) => (
+            <Todo key={todo.id} todo={todo} />
+          ))}
+        </ol>
+      ) : (
+        <NewTop3 />
+      )}
     </main>
   );
 }
