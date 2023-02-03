@@ -20,6 +20,6 @@ model Todo {
   id       Int     @id @default(autoincrement())
   title    String
   complete Boolean @default(false)
-  Top3     Top3    @relation(fields: [top3Id], references: [id])
+  Top3     Top3    @relation(fields: [top3Id], references: [id], onDelete: Cascade)
   top3Id   Int
 }
