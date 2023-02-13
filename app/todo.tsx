@@ -32,15 +32,27 @@ export const Todo = ({ todo }: Props) => {
     });
   }
   return (
-    <li style={{ opacity: !isMutating ? 1 : 0.7 }}>
-      <input
-        id={`todo-${todo.id}`}
-        type="checkbox"
-        checked={todo.complete}
-        onChange={handleChange}
-        disabled={isPending}
-      />
-      <label htmlFor={`todo-${todo.id}`}>{todo.title}</label>
-    </li>
+    <div
+      className="relative flex items-start"
+      style={{ opacity: !isMutating ? 1 : 0.7 }}
+    >
+      <div className="flex h-5 items-center">
+        <input
+          id={`todo-${todo.id}`}
+          type="checkbox"
+          checked={todo.complete}
+          onChange={handleChange}
+          disabled={isPending}
+        />
+      </div>
+      <div className="ml-3 text-sm">
+        <label
+          htmlFor={`todo-${todo.id}`}
+          className="font-medium text-gray-700"
+        >
+          {todo.title}
+        </label>
+      </div>
+    </div>
   );
 };
