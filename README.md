@@ -1,4 +1,15 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js Daily Top 3
+
+![Daily Top 3](images/animation-demo.gif)
+
+## Introduction
+
+This the demo code used in a series of LinkedIn articles:
+
+- [Taking the Next.js 13 Beta out for a spin](https://www.linkedin.com/pulse/taking-nextjs-13-beta-out-spin-justin-ramel/)
+- [Next.js 13 - Hooking up a database](https://www.linkedin.com/pulse/nextjs-13-hooking-up-database-justin-ramel/)
+- [Next.js 13 - Create & Update](https://www.linkedin.com/pulse/nextjs-create-update-justin-ramel/)
+- [Next.js 13 - Styling & Animation](https://www.linkedin.com/pulse/nextjs-styling-animation-justin-ramel/)
 
 ## Getting Started
 
