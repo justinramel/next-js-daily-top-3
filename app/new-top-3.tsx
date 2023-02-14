@@ -2,6 +2,7 @@
 
 import { FormEvent } from "react";
 import { useRouter } from "next/navigation";
+import { CheckBox } from "@/app/check-box";
 
 export const NewTop3 = () => {
   const router = useRouter();
@@ -25,7 +26,9 @@ export const NewTop3 = () => {
         <div className="bg-white py-6 px-4 sm:p-6">
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <div className="flex flex-row gap-4 items-center">
-              <label>1.</label>
+              <label>
+                <CheckBox label="1" complete={false} />
+              </label>
               <input
                 type="text"
                 name="todo"
@@ -34,7 +37,9 @@ export const NewTop3 = () => {
               />
             </div>
             <div className="flex flex-row gap-4 items-center">
-              <label>2.</label>
+              <label>
+                <CheckBox label="2" complete={false} />
+              </label>
               <input
                 type="text"
                 name="todo"
@@ -42,7 +47,9 @@ export const NewTop3 = () => {
               />
             </div>
             <div className="flex flex-row gap-4 items-center">
-              <label>3.</label>
+              <label>
+                <CheckBox label="3" complete={false} />
+              </label>
               <input
                 type="text"
                 name="todo"
