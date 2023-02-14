@@ -3,12 +3,14 @@
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { Todo as TodoType } from "@prisma/client";
+import { CheckBox } from "@/app/check-box";
 
 type Props = {
   todo: TodoType;
+  index: number;
 };
 
-export const Todo = ({ todo }: Props) => {
+export const Todo = ({ todo, index }: Props) => {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
   const [isFetching, setIsFetching] = useState(false);
@@ -32,15 +34,30 @@ export const Todo = ({ todo }: Props) => {
     });
   }
   return (
-    <li style={{ opacity: !isMutating ? 1 : 0.7 }}>
-      <input
-        id={`todo-${todo.id}`}
-        type="checkbox"
-        checked={todo.complete}
-        onChange={handleChange}
-        disabled={isPending}
-      />
-      <label htmlFor={`todo-${todo.id}`}>{todo.title}</label>
-    </li>
+    <div className="relative flex" style={{ opacity: !isMutating ? 1 : 0.7 }}>
+      <div className="flex items-center">
+        <label htmlFor={`todo-${todo.id}`}>
+          <CheckBox label={index.toString()} complete={todo.complete} />
+        </label>
+      </div>
+      <div className="ml-3 text-lg flex items-center">
+        <label
+          htmlFor={`todo-${todo.id}`}
+          className={`font-medium text-gray-700 ${
+            todo.complete ? "line-through" : ""
+          }`}
+        >
+          {todo.title}
+        </label>
+        <input
+          id={`todo-${todo.id}`}
+          type="checkbox"
+          checked={todo.complete}
+          onChange={handleChange}
+          disabled={isPending}
+          className="hidden"
+        />
+      </div>
+    </div>
   );
 };
