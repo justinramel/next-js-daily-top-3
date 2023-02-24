@@ -12,7 +12,7 @@ export const NewTop3 = () => {
     const formData = new FormData(event.currentTarget);
     const todos = formData.getAll("todo");
 
-    await fetch(`/api/top3/create`, {
+    await fetch(`/api/top3`, {
       method: "POST",
       body: JSON.stringify(todos),
     });

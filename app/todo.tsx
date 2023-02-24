@@ -21,7 +21,7 @@ export const Todo = ({ todo, index }: Props) => {
   async function handleChange() {
     setIsFetching(true);
     // Mutate external data source
-    await fetch(`/api/todo/${todo.id}/update`, {
+    await fetch(`/api/todo/${todo.id}`, {
       method: "PUT",
       body: JSON.stringify({ complete: !todo.complete }),
     });
