@@ -10,6 +10,7 @@ This the demo code used in a series of LinkedIn articles:
 - [Next.js 13 - Hooking up a database](https://www.linkedin.com/pulse/nextjs-13-hooking-up-database-justin-ramel/)
 - [Next.js 13 - Create & Update](https://www.linkedin.com/pulse/nextjs-create-update-justin-ramel/)
 - [Next.js 13 - Styling & Animation](https://www.linkedin.com/pulse/nextjs-styling-animation-justin-ramel/)
+- [Next.js 13.2 - Route Handlers](https://www.linkedin.com/pulse/nextjs-route-handlers-justin-ramel)
 
 ## Getting Started
 
